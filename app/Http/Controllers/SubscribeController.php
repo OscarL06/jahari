@@ -17,14 +17,15 @@ class SubscribeController extends Controller
         $payLinkSix = $user->newSubscription('default', $six = 42336)
             ->returnTo(route('dash'))
             ->create(); 
-            
-        $subscription = $user->subscription('default');
- 
-        $lastPayment = $subscription->lastPayment();
-        $nextPayment = $subscription->nextPayment();
 
-        $receipts = $user->receipts;
+        $yearly = $user->newSubscription('default', $month = 42337)
+            ->returnTo(route('dash'))
+            ->create();
+
+        $lifetime = $user->newSubscription('default', $six = 42339)
+            ->returnTo(route('dash'))
+            ->create();     
             
-        return view('subscribe', compact('payLink','payLinkSix', 'lastPayment', 'nextPayment', 'receipts'));    
+        return view('subscribe', compact('payLink','payLinkSix', 'yearly', 'lifetime'));    
     }
 }
