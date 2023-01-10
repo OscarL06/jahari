@@ -12,8 +12,8 @@
             Sign up today and start your journey to becoming a skilled pianist!
         </p>
 
-        <div class="grid grid-cols-3 gap-6 px-6 mt-20">
-            <div class="flex flex-col justify-between w-full p-5 bg-white rounded-md shadow-xl">
+        <div class="grid w-full grid-cols-1 gap-6 px-6 mt-20 lg:grid-cols-3">
+            <div class="flex flex-col justify-between w-11/12 p-5 mx-auto bg-white rounded-md shadow-xl md:w-3/4 lg:w-full">
                 <h2 class="text-2xl tracking-tighter text-purple-800">Monthly</h2>
                 <h3 class="pt-5 text-5xl font-semibold">$80<span class="text-base text-gray-600">/mo</span></h3>
                 <p class="py-4">
@@ -22,7 +22,7 @@
                 </p>
                 <x-paddle-button :url="$payLink" class="px-4 py-1 text-center text-white rounded-md hover:bg-purple-900 bg-main" data-theme="none">Get Access</x-paddle-button>
             </div>
-            <div class="flex flex-col justify-between w-full p-5 bg-white rounded-md shadow-xl">
+            <div class="flex flex-col justify-between w-11/12 p-5 mx-auto bg-white rounded-md shadow-xl md:w-3/4 lg:w-full">
                 <h2 class="text-2xl tracking-tighter text-purple-800">Biannual</h2>
                 <h3 class="pt-5 text-5xl font-semibold">$450<span class="text-base text-gray-600">/6-mos</span></h3>
                 <p class="py-4">
@@ -31,7 +31,7 @@
                 </p>
                 <x-paddle-button :url="$payLinkSix" class="px-4 py-1 text-center text-white rounded-md bg-main" data-theme="none">Get Access</x-paddle-button>
             </div>
-            <div class="flex flex-col justify-between w-full p-5 bg-white rounded-md shadow-xl">
+            <div class="flex flex-col justify-between w-11/12 p-5 mx-auto bg-white rounded-md shadow-xl md:w-3/4 lg:w-full">
                 <h2 class="text-2xl tracking-tighter text-purple-800">Annualy</h2>
                 <h3 class="pt-5 text-5xl font-semibold">$900<span class="text-base text-gray-600">/yr</span></h3>
                 <p class="py-4">
@@ -42,21 +42,15 @@
             </div>
         </div>
 
-        <div class="flex justify-center my-16">
-            <div class="flex flex-col p-5 mx-6 bg-white rounded-md shadow-xl items-between">
-                <div class="flex items-center justify-between">
-                    <div class="flex flex-col items-center order-2 w-1/4">
-                        <h3 class="pt-5 text-5xl font-semibold">$999</h3>
-                        <x-paddle-button :url="$lifetime" class="w-3/4 px-4 py-1 mt-4 text-center text-white rounded-md bg-main hover:bg-purple-900" data-theme="none">Get Access</x-paddle-button>
-                    </div>
-                    <div class="order-1 w-3/4 py-4">
-                        <h2 class="mb-5 text-2xl tracking-tighter text-purple-800">Lifetime</h2>
-                        <p>
-                            Our lifetime subscription gives you access to all of our piano lessons and resources for as long as our platform is in operation. 
-                            This is the ultimate option for those who want to dedicate themselves to their piano studies and have a lifetime of learning at their fingertips.
-                        </p>
-                    </div>  
-                </div>  
+        <div class="grid w-full grid-cols-1 gap-6 px-6 mt-6 mb-16 lg:w-3/4 lg:my-14">
+            <div class="flex flex-col justify-between w-11/12 p-5 mx-auto bg-white rounded-md shadow-xl lg:px-6 md:w-3/4 lg:w-full">
+                <h2 class="text-2xl tracking-tighter text-purple-800">Lifetime</h2>
+                <h3 class="pt-5 text-5xl font-semibold">$999<span class="text-base text-gray-600">One-time</span></h3>
+                <p class="py-4">
+                    Our lifetime subscription gives you access to all of our piano lessons and resources for as long as our platform is in operation. 
+                    This is the ultimate option for those who want to dedicate themselves to their piano studies and have a lifetime of learning at their fingertips.
+                </p>
+                <x-paddle-button :url="$lifetime" class="px-4 py-1 text-center text-white rounded-md lg:my-2 lg:mx-auto lg:w-3/5 hover:bg-purple-900 bg-main" data-theme="none">Get Accesss</x-paddle-button>
             </div>
         </div>
     </div>
