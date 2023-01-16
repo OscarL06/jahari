@@ -3,36 +3,38 @@
 @section('title', 'Dashboard | ' . Auth::user()->username)
 
 @section('content')
-    <div class="w-full lg:w-4/5 flex flex-col items-center lg:ml-[20%] mt-2">
+    <div class="w-full lg:w-4/5 flex flex-col items-center lg:ml-[20%]">
 
-        <div class="w-[96%] rounded-md">
+        <div class="w-[95%] rounded-md">
             <div class="rounded-t-md">
-                <img class="object-cover w-full h-32 rounded-t-md lg:h-32" src="https://images.squarespace-cdn.com/content/v1/5ca56d03b9144940612d53a2/cfe888e7-179d-4ef5-87dd-fe0f2a280256/_TOL0076.jpg" alt="avatar image">
+                <img class="object-cover w-full h-32 rounded-t-md lg:h-36" src="/images/header.jpg" alt="avatar image">
             </div>
             <div class="max-w-5xl px-4 mx-auto sm:px-6 lg:px-8">
                 <div class="-mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5">
                     <div class="flex">
-                        <img class="w-24 h-24 rounded-full ring-4 ring-white sm:h-32 sm:w-32" src="https://ui-avatars.com/api/?name=Oscar&background=6b21a8&color=fff" alt="">
+                        <img class="w-24 h-24 rounded-full ring-4 ring-white sm:h-32 sm:w-32" src="https://ui-avatars.com/api/?name=Oscar&background=7F22CE&color=fff&length=1" alt="">
                     </div>
                     <div class="mt-6 sm:flex sm:min-w-0 sm:flex-1 sm:items-center sm:justify-end sm:space-x-6 sm:pb-1">
                         <div class="flex-1 min-w-0 mt-6 sm:hidden md:block">
-                            <h1 class="text-2xl font-bold text-gray-900 truncate">Oscar Landa</h1>
+                            <div class="flex items-center">
+                                <?xml version="1.0" ?><svg class="w-4 h-4 mt-2 mr-2" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M22 21C23.1046 21 24 20.1046 24 19V5C24 3.89543 23.1046 3 22 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H22ZM11 5H8.98486V13H7.98511V19H12V13H11V5ZM18.0151 19H22V5H19.0151V13H18.0151V19ZM17.0151 13H16.0151V5H14V13H13V19H17.0151V13ZM6.98511 19V13H5.98486V5H3L3 19H6.98511Z" fill="currentColor" fill-rule="evenodd"/></svg>
+                                <h1 class="font-sans text-5xl text-gray-900 truncate">Oscar Landa</h1>
+                            </div>
                         </div>
                         <div class="flex flex-col mt-6 space-y-3 justify-stretch sm:flex-row sm:space-y-0 sm:space-x-4">
-                            <button type="button" class="inline-flex justify-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2">
+                            <button type="button" class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white rounded-md shadow-sm bg-main">
                                 <!-- Heroicon name: mini/envelope -->
-                                <svg class="w-5 h-5 mr-2 -ml-1 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
-                                <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2 -ml-1">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.125C2.25 6.504 2.754 6 3.375 6h6c.621 0 1.125.504 1.125 1.125v3.75c0 .621-.504 1.125-1.125 1.125h-6a1.125 1.125 0 01-1.125-1.125v-3.75zM14.25 8.625c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v8.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 01-1.125-1.125v-8.25zM3.75 16.125c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v2.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 01-1.125-1.125v-2.25z" />
                                 </svg>
-                                <span>Message</span>
+                                <span>Button</span>
                             </button>
-                            <button type="button" class="inline-flex justify-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2">
+                            <button type="button" class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white rounded-md shadow-sm bg-main">
                                 <!-- Heroicon name: mini/phone -->
-                                <svg class="w-5 h-5 mr-2 -ml-1 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z" clip-rule="evenodd" />
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2 -ml-1">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0" />
                                 </svg>
-                                <span>Call</span>
+                                <span>Button</span>
                             </button>
                         </div>
                     </div>
