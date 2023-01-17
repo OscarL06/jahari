@@ -5,7 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-Route::get('/', function () { return view('welcome'); });
+Route::get('/', function () { return view('jahari.home'); })->name('home');
+Route::get('/contact', function () { return view('jahari.contact'); })->name('contact');
+Route::get('/gallery', function () { return view('jahari.gallery'); })->name('gallery');
 
 Route::get('/dash', function () { return view('dash');})->name('dash');
 Route::get('/courses', [CategoriesController::class, 'categories'])->name('categories');
