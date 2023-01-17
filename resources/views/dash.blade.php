@@ -18,7 +18,7 @@
                         <div class="flex-1 min-w-0 mt-6 sm:hidden md:block">
                             <div class="flex items-center">
                                 <?xml version="1.0" ?><svg class="w-4 h-4 mt-2 mr-2" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M22 21C23.1046 21 24 20.1046 24 19V5C24 3.89543 23.1046 3 22 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H22ZM11 5H8.98486V13H7.98511V19H12V13H11V5ZM18.0151 19H22V5H19.0151V13H18.0151V19ZM17.0151 13H16.0151V5H14V13H13V19H17.0151V13ZM6.98511 19V13H5.98486V5H3L3 19H6.98511Z" fill="currentColor" fill-rule="evenodd"/></svg>
-                                <h1 class="font-sans text-5xl text-gray-900 truncate">Oscar Landa</h1>
+                                <h1 class="text-5xl tracking-tighter text-gray-900 truncate font-abel">Oscar Landa</h1>
                             </div>
                         </div>
                         <div class="flex flex-col mt-6 space-y-3 justify-stretch sm:flex-row sm:space-y-0 sm:space-x-4">
