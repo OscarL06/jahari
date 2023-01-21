@@ -6,11 +6,7 @@
     <div class="w-full lg:w-4/5 flex flex-col items-center lg:ml-[20%] mt-16 lg:mt-6">
         <div class="w-[95%] px-2">
             <h1 class="text-5xl tracking-tighter font-abel">{{ $course->category->name }} | {{ $course->name }}</h1>
-            <p class="mt-2 ">
-                This course focuses on the basics of jazz theory, including chords, scales, and voicings. It covers the essential concepts needed to understand 
-                and play jazz piano. This lesson is designed to establish a foundation for the rest of the course, providing students with the tools to begin 
-                exploring jazz piano.
-            </p>
+            <p class="mt-2 ">{{ $course->description }}</p>
 
             <div class="flex flex-col items-center w-full my-16">
                 <div class="flex items-center justify-around w-[98%] py-2 text-white rounded-lg shadow md:w-3/4 bg-main">
@@ -24,13 +20,13 @@
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-1">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.098 19.902a3.75 3.75 0 005.304 0l6.401-6.402M6.75 21A3.75 3.75 0 013 17.25V4.125C3 3.504 3.504 3 4.125 3h5.25c.621 0 1.125.504 1.125 1.125v4.072M6.75 21a3.75 3.75 0 003.75-3.75V8.197M6.75 21h13.125c.621 0 1.125-.504 1.125-1.125v-5.25c0-.621-.504-1.125-1.125-1.125h-4.072M10.5 8.197l2.88-2.88c.438-.439 1.15-.439 1.59 0l3.712 3.713c.44.44.44 1.152 0 1.59l-2.879 2.88M6.75 17.25h.008v.008H6.75v-.008z" />
                         </svg>
-                        Beginner
+                        {{ $course->level }}
                     </p>
                     <p class="flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-1">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        3h 47m
+                        {{ $course->time }}
                     </p>
                     <p class="flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-1">
