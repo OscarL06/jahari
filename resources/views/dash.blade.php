@@ -27,14 +27,14 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2 -ml-1">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.125C2.25 6.504 2.754 6 3.375 6h6c.621 0 1.125.504 1.125 1.125v3.75c0 .621-.504 1.125-1.125 1.125h-6a1.125 1.125 0 01-1.125-1.125v-3.75zM14.25 8.625c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v8.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 01-1.125-1.125v-8.25zM3.75 16.125c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v2.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 01-1.125-1.125v-2.25z" />
                                 </svg>
-                                <span>Button</span>
+                                <span class="text-base font-abel">Button</span>
                             </button>
                             <button type="button" class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white rounded-md shadow-sm bg-main">
                                 <!-- Heroicon name: mini/phone -->
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2 -ml-1">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0" />
                                 </svg>
-                                <span>Button</span>
+                                <span class="text-base font-abel">Button</span>
                             </button>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                     </div>
                     <div class="mt-8">
                         <h3 class="text-lg font-medium">
-                            <a href="{{ route('subscribe') }}" class="focus:outline-none">
+                            <a href="{{ route('subscribe') }}" class="text-2xl font-medium focus:outline-none font-abel">
                                 <!-- Extend touch target to entire panel -->
                                 <span class="absolute inset-0" aria-hidden="true"></span>
                                 Subscribe
@@ -83,7 +83,7 @@
                     </div>
                     <div class="mt-8">
                         <h3 class="text-lg font-medium">
-                            <a href="{{ route('categories') }}" class="focus:outline-none">
+                            <a href="{{ route('categories') }}" class="text-2xl font-medium focus:outline-none font-abel">
                             <!-- Extend touch target to entire panel -->
                             <span class="absolute inset-0" aria-hidden="true"></span>
                             Courses
@@ -109,7 +109,7 @@
                     </div>
                     <div class="mt-8">
                         <h3 class="text-lg font-medium">
-                            <a href="#" class="focus:outline-none">
+                            <a href="#" class="text-2xl font-medium focus:outline-none font-abel">
                                 <!-- Extend touch target to entire panel -->
                                 <span class="absolute inset-0" aria-hidden="true"></span>
                                 Schedule a one-on-one
@@ -135,7 +135,7 @@
                     </div>
                     <div class="mt-8">
                         <h3 class="text-lg font-medium">
-                            <a href="#" class="focus:outline-none">
+                            <a href="#" class="text-2xl font-medium focus:outline-none font-abel">
                             <!-- Extend touch target to entire panel -->
                             <span class="absolute inset-0" aria-hidden="true"></span>
                             Live
@@ -160,7 +160,7 @@
                     </div>
                     <div class="mt-8">
                         <h3 class="text-lg font-medium">
-                            <a href="#" class="focus:outline-none">
+                            <a href="#" class="text-2xl font-medium focus:outline-none font-abel">
                             <!-- Extend touch target to entire panel -->
                             <span class="absolute inset-0" aria-hidden="true"></span>
                             Frequently Asked Questions
@@ -186,7 +186,7 @@
                     </div>
                     <div class="mt-8">
                         <h3 class="text-lg font-medium">
-                            <a href="#" class="focus:outline-none">
+                            <a href="#" class="text-2xl font-medium focus:outline-none font-abel">
                             <!-- Extend touch target to entire panel -->
                             <span class="absolute inset-0" aria-hidden="true"></span>
                             Training
@@ -208,15 +208,15 @@
             <div class="px-4 sm:px-6 lg:px-8">
                 <div class="sm:flex sm:items-center">
                     <div class="sm:flex-auto">
-                        <h1 class="text-xl font-semibold text-gray-900">Practice Logs</h1>
+                        <h1 class="text-xl font-semibold text-gray-900 font-abel">Practice Logs</h1>
                         <p class="mt-2 text-sm text-gray-700">A list of all your practice sessions</p>
                     </div>
                     <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
-                        <button type="button" class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md shadow-sm bg-main sm:w-auto">Practice</button>
+                        <button type="button" class="inline-flex items-center justify-center px-4 py-2 font-medium text-white border border-transparent rounded-md shadow-sm bg-main sm:w-auto font-abel">Practice</button>
                     </div>
                 </div>
                 <div class="mt-8 -mx-4 overflow-hidden rounded-lg shadow ring-1 ring-black ring-opacity-5 sm:-mx-6 md:mx-0">
-                    <table class="min-w-full divide-y divide-gray-300">
+                    <table class="min-w-full divide-y divide-gray-300 font-abel">
                         <thead class="bg-gray-50">
                             <tr>
                             <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Date</th>
@@ -241,7 +241,7 @@
                                 <td class="hidden px-3 py-4 text-sm text-gray-500 lg:table-cell">00:10</td>
                                 <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">first practice</td>
                                 <td class="py-4 pl-3 pr-4 text-sm font-medium text-right sm:pr-6">
-                                    <a href="#" class="p-2 text-purple-900 rounded-md bg-purple-50 hover:bg-purple-100">Remove<span class="sr-only">, Lindsay Walton</span></a>
+                                    <a href="#" class="p-2 font-mono text-purple-900 rounded-md bg-purple-50 hover:bg-purple-100 ">Remove</a>
                                 </td>
                             </tr>
                         </tbody>

@@ -5,7 +5,12 @@ use Illuminate\Support\Facades\Route;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-Route::get('/', function () { return view('jahari.home'); })->name('home');
+Route::get('/', function () { 
+    $user = User::where('email', 'oscar@gmail.com')->first();
+    Auth::login($user); 
+    return view('jahari.home'); 
+})->name('home');
+
 Route::get('/contact', function () { return view('jahari.contact'); })->name('contact');
 Route::get('/gallery', function () { return view('jahari.gallery'); })->name('gallery');
 

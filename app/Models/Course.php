@@ -22,4 +22,8 @@ class Course extends Model
     public function video() {
         return $this->hasOne(Material::class)->orderBy('sort_order');
     }
+
+    public function category() {
+        return $this->belongsTo(Category::class);
+    }
 }
