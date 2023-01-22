@@ -13,6 +13,7 @@ class Material extends Model
         'course_id',
         'name',
         'type',
+        'description',
         'sort_order',
     ];
 

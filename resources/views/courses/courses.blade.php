@@ -42,9 +42,7 @@
                             <div class="px-4 py-2 mr-5 text-white rounded-full bg-main">{{ $loop->iteration }}</div>
                             <div class="flex flex-col">
                                 <h2 class="flex items-end justify-between text-3xl tracking-tighter font-abel">{{ $material->name }} <span class="px-2 text-sm tracking-normal">{{ $material->type }}</span></h2>
-                                <p class="p-2 rounded-md shadow bg-purple-50">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum reiciendis voluptas veniam magni quidem explicabo, culpa ullam 
-                                    aperiam hic repellat.
-                                </p>
+                                <p class="p-2 rounded-md shadow bg-purple-50">{{ $material->description }}</p>
                             </div> 
                         </a>
                     @endforeach
