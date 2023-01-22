@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -27,5 +28,12 @@ class Material extends Model
 
     public function course() {
         return $this->belongsTo(Course::class);
+    }
+
+    public function progress()
+    {
+        return $this->hasOne(Progress::class)
+            ->where('user_id', Auth::user()->id)
+            ->where('material_id', $this->id);
     }
 }
