@@ -24,7 +24,11 @@
                     @foreach($category->courses as $course)
                         <a href="/courses/{{ $course->id }}" class="relative w-11/12 p-2 border border-gray-200 rounded-md shadow">
                             <img class="rounded-md" src="/images/image.jpg" alt="{{ $course->name }}">
-                            <p class="absolute text-lg tracking-tight text-white bottom-4 left-4 font-source">{{ $course->name }}</p>
+                            <p class="absolute text-lg tracking-tight text-white bottom-4 left-4 font-source">{{ $course->name }} 
+                            @if($course->hasProgress()) 
+                                <p class='absolute font-mono text-sm text-white top-4 right-4'>In Progress</p>
+                            @endif
+                            </p>
                         </a>
                     @endforeach
                 </div>

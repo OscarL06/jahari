@@ -30,4 +30,10 @@ class Course extends Model
     public function category() {
         return $this->belongsTo(Category::class);
     }
+
+    public function hasProgress(){
+        return Progress::where('user_id', auth()->id())
+            ->whereIn('material_id', $this->materials->pluck('id'))
+            ->exists();
+    }
 }
