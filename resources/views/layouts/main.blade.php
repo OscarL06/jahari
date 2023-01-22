@@ -7,6 +7,7 @@
     <title>@yield('title')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @paddleJS
+    @livewireStyles
 </head>
 <body class="flex justify-between h-full selection:bg-purple-600 selection:text-white" x-data="{sidebar:false}">
 
@@ -155,5 +156,6 @@
     </nav>
 
     @yield('content')
+    @livewireScripts
 </body>
 </html>
