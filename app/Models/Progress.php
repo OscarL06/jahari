@@ -14,5 +14,6 @@ class Progress extends Model
         'user_id',
         'material_id',
         'time',
+        'completed'
     ];
 }
