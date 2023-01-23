@@ -41,7 +41,7 @@
                         <a class="flex items-center mt-8" href="/courses/lesson/{{ $material->id }}">
                             <div class="px-4 py-2 mr-5 text-white rounded-full bg-main">{{ $loop->iteration }}</div>
                             <div class="flex flex-col">
-                                <h2 class="flex items-end justify-between text-3xl tracking-tighter font-abel">{{ $material->name }}  <span class="px-2 text-sm tracking-normal">{{ $material->type }} {{ !empty($material->progress) ? ' - In Progress' : '' }}</span></h2>
+                                <h2 class="flex items-end justify-between text-3xl tracking-tighter font-abel">{{ $material->name }}  <span class="px-2 text-sm tracking-normal">{{ $material->type }} {{ !empty($material->progress) && $material->progress->completed === 1 ? '- Completed' : (!empty($material->progress) ? '- In Progress' : '') }}</span></h2>
                                 <p class="p-2 rounded-md shadow bg-purple-50">{{ $material->description }}</p>
                             </div> 
                         </a>
