@@ -30,10 +30,15 @@ class Material extends Model
         return $this->belongsTo(Course::class);
     }
 
-    public function progress()
-    {
+    public function progress(){
         return $this->hasOne(Progress::class)
             ->where('user_id', Auth::user()->id)
             ->where('material_id', $this->id);
+    }
+
+    public function nextLesson(){
+        return static::where('course_id', $this->course_id)
+            ->where('id', '>', $this->id)
+            ->first();
     }
 }

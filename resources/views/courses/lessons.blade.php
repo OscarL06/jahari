@@ -6,12 +6,21 @@
     <div class="w-full lg:w-4/5 flex flex-col items-center lg:ml-[20%] mt-16 lg:mt-6">
         <h1 class="text-5xl tracking-tighter font-abel">{{ $lesson->course->name }} | {{ $lesson->name }}</h1>
 
+        @if(session()->has('status'))
+            <div x-data="{ showFlash: true }" x-show="showFlash">
+                <div class="mt-2 text-lg font-abel fade-out">{{ session()->get('status') }}</div>
+                @if (!empty($lesson->progress->completed) && $lesson->progress->completed === 1)
+                    <a href="{{ route('lesson', ['id' => $nextLesson->id]) }}">Next Lesson</a>
+                @endif
+            </div>
+        @endif
+
         <div class="flex flex-col items-center w-11/12 md:flex-row md:justify-center">
             <div class="flex flex-col items-center w-11/12 mt-16 xl:w-2/3 md:w-1/2">
                 @livewire('progress-video', ['lesson_id' => $lesson->id ])
 
                 <div class="flex justify-center w-full p-1 mt-2 space-x-5 text-white rounded-md shadow md:space-x-2 xl:space-x-10 lg:w-full bg-main" wire:click="updateProgress">
-                    @livewire('lesson-complete')
+                    @livewire('lesson-complete', ['lesson_id' => $lesson->id])
                     <button class="px-2 py-0.5 text-white bg-main rounded-md font-abel shadow shadow-purple-500 flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-1">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
@@ -43,8 +52,8 @@
                     <div class="flex flex-col w-5/6 p-2 space-y-4 rounded-md shadow font-abel">
                         @foreach ($lesson->course->materials as $material)
                             <a href="{{ $material->id }}" class="flex items-center w-full px-1 py-1 text-lg rounded-md odd:bg-purple-50 hover:bg-purple-100">
-                                <span class="px-2 py-1 mr-1 text-sm text-white rounded-full bg-main">1</span>
-                                {{ $material->name }} <span class="ml-1 text-sm"> {{ !empty($material->progress) ? '- In Progress' : '' }}</span>
+                                <span class="px-2 py-1 mr-1 text-sm text-white rounded-full bg-main">{{ $loop->iteration }}</span>
+                                {{ $material->name }} <span class="ml-1 text-sm">{{ !empty($material->progress) && $material->progress->completed === 1 ? '- Completed' : (!empty($material->progress) ? '- In Progress' : '') }}</span>
                             </a>
                         @endforeach
                     </div>
@@ -79,7 +88,7 @@
         </div>
 
         <div class="my-6">
-            @livewire('lesson-complete')
+            @livewire('lesson-complete', ['lesson_id' => $lesson->id])
         </div>
     </div>
 

@@ -48,6 +48,28 @@ animation: marquee 6s linear 0s infinite;
 animation-play-state:paused;
 }
 
+.fade-out {
+	-webkit-animation: fade-out 2s ease-out 2s both;
+	animation: fade-out 2s ease-out 2s both;
+}
+
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 @keyframes marquee{
 0%{
     left:100%;
