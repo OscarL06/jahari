@@ -46,22 +46,12 @@
 
                 <div class="flex justify-center w-full mt-3 rounded-md h-4/5" x-show="!open">
                     <div class="flex flex-col w-5/6 p-2 space-y-4 rounded-md shadow font-abel">
-                        <a href="" class="w-full px-1 py-1 text-lg rounded-md odd:bg-purple-50 hover:bg-purple-100">
-                            <span class="px-2 py-1 mr-1 text-sm text-white rounded-full bg-main">1</span>
-                            Name of Lesson
-                        </a>
-                        <a href="" class="w-full px-1 py-1 text-lg rounded-md odd:bg-purple-50 hover:bg-purple-100">
-                            <span class="px-2 py-1 mr-1 text-sm text-white rounded-full bg-main">1</span>
-                            Name of Lesson
-                        </a>
-                        <a href="" class="w-full px-1 py-1 text-lg rounded-md odd:bg-purple-50 hover:bg-purple-100">
-                            <span class="px-2 py-1 mr-1 text-sm text-white rounded-full bg-main">1</span>
-                            Name of Lesson
-                        </a>
-                        <a href="" class="w-full px-1 py-1 text-lg rounded-md odd:bg-purple-50 hover:bg-purple-100">
-                            <span class="px-2 py-1 mr-1 text-sm text-white rounded-full bg-main">1</span>
-                            Name of Lesson
-                        </a>
+                        @foreach ($lesson->course->materials as $material)
+                            <a href="{{ $material->id }}" class="flex items-center w-full px-1 py-1 text-lg rounded-md odd:bg-purple-50 hover:bg-purple-100">
+                                <span class="px-2 py-1 mr-1 text-sm text-white rounded-full bg-main">1</span>
+                                {{ $material->name }} <span class="ml-1 text-sm"> {{ !empty($material->progress) ? '- In Progress' : '' }}</span>
+                            </a>
+                        @endforeach
                     </div>
                 </div>
 
@@ -81,7 +71,7 @@
             </svg>
         </div>
 
-        <div class="w-5/6 rounded-md lg:w-3/5">
+        <div id="slices" class="w-5/6 rounded-md lg:w-3/5">
             @foreach($lesson->slices as $slices)
                 <iframe src="{{ $slices->url }}" width="100%" height="500" frameBorder="0" allowfullscreen class="my-10 rounded-lg"></iframe>
             @endforeach  
