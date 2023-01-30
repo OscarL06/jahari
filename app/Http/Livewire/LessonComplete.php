@@ -16,13 +16,6 @@ class LessonComplete extends Component
     }
 
     public function complete(){
-        
-        /* $progress = Progress::where('user_id', Auth::user()->id)
-            ->where('material_id', $this->lesson_id)
-            ->first();
-        if ($progress) {
-            $progress->update(['completed' => 1]);
-        } */
 
         $progress = Progress::firstOrCreate([
             'user_id' => Auth::user()->id,

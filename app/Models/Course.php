@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -36,4 +37,15 @@ class Course extends Model
             ->whereIn('material_id', $this->materials->pluck('id'))
             ->exists();
     }
+
+    public function materialCount() {
+        return $this->materials()->count();
+    }
+
+    public function completedMaterialCount(){
+        return $this->materials->filter(function($material){
+                return $material->progress()->where('completed', 1)->exists();
+            })->count();
+    }
+
 }
