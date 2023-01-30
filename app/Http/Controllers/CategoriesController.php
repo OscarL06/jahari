@@ -17,8 +17,10 @@ class CategoriesController extends Controller
     public function courses($id){
         
         $course = Course::with('materials')->where('id', $id)->first();
+        
+        $completed = $course->completedMaterialCount() / $course->materialCount() * 100;
 
-        return view('courses.courses', compact('course', 'id'));
+        return view('courses.courses', compact('course', 'id', 'completed'));
     }
 
     public function lessons($id) {
