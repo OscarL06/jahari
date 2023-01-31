@@ -19,6 +19,11 @@ class EventServiceProvider extends ServiceProvider
             SendEmailVerificationNotification::class,
             CreateUserPoints::class
         ],
+        
+        CourseCompleted::class => [
+            RewardPointsOnCourseCompletion::class,
+            MarkCourseAsCompleted::class
+        ],
     ];
 
     /**
