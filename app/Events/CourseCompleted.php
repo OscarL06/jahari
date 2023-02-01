@@ -14,14 +14,18 @@ class CourseCompleted
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
+    public $user_id;
+    public $course_id;
+
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(int $user_id, int $course_id)
     {
-        //
+        $this->user_id = $user_id;
+        $this->course_id = $course_id;
     }
 
     /**

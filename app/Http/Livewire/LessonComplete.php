@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use App\Events\CourseCompleted;
 use App\Models\{Progress, Material};
 use Illuminate\Support\Facades\Auth;
 
@@ -23,6 +24,15 @@ class LessonComplete extends Component
         ]);
 
         $progress->update(['completed' => 1]);
+
+        $lesson = Material::find($this->lesson_id);
+        $course = $lesson->course;
+
+        $completed = $course->completedMaterialCount() / $course->materialCount() * 100;
+
+        if ($completed == 100) {
+            CourseCompleted::dispatch(Auth::user()->id, $course->id);
+        }    
 
         return redirect()->route('lesson', ['id' => $this->lesson_id])->with('status', 'Completed');
     }

@@ -4,6 +4,8 @@ namespace App\Listeners;
 
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
+use App\Events\CourseCompleted;
+use App\Models\Point;
 
 class RewardPointsOnCourseCompletion
 {
@@ -23,8 +25,9 @@ class RewardPointsOnCourseCompletion
      * @param  object  $event
      * @return void
      */
-    public function handle($event)
+    public function handle(CourseCompleted $event)
     {
-        //
+        $points = Point::where('user_id', $event->user_id)->first();
+        $points->increment('points', 100);
     }
 }

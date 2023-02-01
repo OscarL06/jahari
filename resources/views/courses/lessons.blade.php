@@ -10,7 +10,9 @@
             <div x-data="{ showFlash: true }" x-show="showFlash">
                 <div class="mt-2 text-lg font-abel fade-out">{{ session()->get('status') }}</div>
                 @if (!empty($lesson->progress->completed) && $lesson->progress->completed === 1)
-                    <a href="{{ route('lesson', ['id' => $nextLesson->id]) }}">Next Lesson</a>
+                    @if (!empty($nextLesson->id))
+                        <a href="{{ route('lesson', ['id' => $nextLesson->id]) }}">Next Lesson</a>
+                    @endif
                 @endif
             </div>
         @endif

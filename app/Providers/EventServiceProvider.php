@@ -6,6 +6,9 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
+use App\Events\CourseCompleted;
+use App\Listeners\MarkCourseAsCompleted;
+use App\Listeners\RewardPointsOnCourseCompletion;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -21,8 +24,8 @@ class EventServiceProvider extends ServiceProvider
         ],
         
         CourseCompleted::class => [
-            RewardPointsOnCourseCompletion::class,
-            MarkCourseAsCompleted::class
+            MarkCourseAsCompleted::class,
+            RewardPointsOnCourseCompletion::class
         ],
     ];
 

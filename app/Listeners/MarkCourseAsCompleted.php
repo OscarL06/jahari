@@ -2,8 +2,10 @@
 
 namespace App\Listeners;
 
+use App\Events\CourseCompleted;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
+use App\Models\CourseCompleted as CompletedCourse;
 
 class MarkCourseAsCompleted
 {
@@ -23,8 +25,11 @@ class MarkCourseAsCompleted
      * @param  object  $event
      * @return void
      */
-    public function handle($event)
+    public function handle(CourseCompleted $event)
     {
-        //
+        CompletedCourse::create([
+            'user_id' => $event->user_id,
+            'course_id' => $event->course_id,
+        ]);
     }
 }
