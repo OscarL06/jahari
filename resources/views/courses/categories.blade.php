@@ -25,7 +25,9 @@
                         <a href="/courses/{{ $course->id }}" class="relative w-11/12 p-2 border border-gray-200 rounded-md shadow">
                             <img class="rounded-md" src="/images/image.jpg" alt="{{ $course->name }}">
                             <p class="absolute text-lg tracking-tight text-white bottom-4 left-4 font-source">{{ $course->name }} 
-                            @if($course->hasProgress()) 
+                            @if($course->materialCount() !== 0 && $course->completedMaterialCount() / $course->materialCount() * 100 === 100) 
+                                <p class='absolute font-mono text-sm text-white top-4 right-4'>Completed</p>
+                            @elseif ($course->hasProgress())
                                 <p class='absolute font-mono text-sm text-white top-4 right-4'>In Progress</p>
                             @endif
                             </p>
