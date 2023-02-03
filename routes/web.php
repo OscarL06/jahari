@@ -6,8 +6,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 
 Route::get('/', function () { 
-    $user = User::where('email', 'oscar@gmail.com')->first();
-    Auth::login($user); 
+    /* $user = User::where('email', 'oscar@gmail.com')->first();
+    Auth::login($user);  */
     return view('jahari.home'); 
 })->name('home');
 

@@ -5,8 +5,8 @@
 @section('content')
     <div class="w-full lg:w-4/5 flex flex-col items-center lg:ml-[20%] mt-16 lg:mt-4">
         <div class="w-[95%] px-2">
-            <div class="mb-4 w-full bg-gray-200 rounded-full h-2.5">
-                <div class="bg-main h-2.5 rounded-full" style="width: {{ $completed }}%"></div>
+            <div class="mb-4 w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
+                <div class="bg-main h-2.5 rounded-full animate__animated animate__lightSpeedInLeft animate__slower" style="width: {{ $completed }}%"></div>
             </div>
             
             <h1 class="text-5xl tracking-tighter font-abel">{{ $course->category->name }} | {{ $course->name }}</h1>
