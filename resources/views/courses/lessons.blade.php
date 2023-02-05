@@ -61,12 +61,7 @@
                     </div>
                 </div>
 
-                <div class="flex flex-col items-center w-full mt-3" x-show="open">
-                    <textarea name="" id="" cols="30" rows="10" class="w-5/6 border-none rounded-md shadow focus:ring-1 focus:ring-purple-800" placeholder="Notes"></textarea>
-                    <button class="w-1/4 py-1 mt-2 mr-3 text-white rounded-md shadow bg-main">
-                        Save
-                    </button>
-                </div>
+                @livewire('notes', ['lesson_id' => $lesson->id ])
             </div>
         </div>
         
@@ -107,5 +102,14 @@
                 }
             });
         });
+    </script>
+
+    <script>
+        window.addEventListener('noteSaved', event => {
+            document.getElementById("save").innerHTML = "Saved!";
+            setTimeout(function(){
+                document.getElementById("save").innerHTML = "Save";
+            }, 1500);
+        })
     </script>
 @endsection
