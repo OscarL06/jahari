@@ -95,6 +95,8 @@
         </div>
     </div>
 
+    <x-back-button/>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var video = document.getElementById('video');
