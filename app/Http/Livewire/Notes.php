@@ -13,7 +13,10 @@ class Notes extends Component
     public function render()
     {
         $notes = Note::where('user_id', Auth::user()->id)->where('material_id', $this->lesson_id)->first();
-        $this->notes = $notes->notes;
+        
+        if(!empty($notes)){
+            $this->notes = $notes->notes;
+        }
 
         return view('livewire.notes');
     }

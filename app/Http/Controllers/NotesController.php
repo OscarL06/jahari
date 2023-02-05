@@ -10,7 +10,7 @@ class NotesController extends Controller
 {
     public function show() {
 
-        $notes = Note::where('user_id', Auth::user()->id)->get();
+        $notes = Note::where('user_id', Auth::user()->id)->orderBy('updated_at', 'DESC')->get();
         
         return view('notes', compact('notes'));
     }
