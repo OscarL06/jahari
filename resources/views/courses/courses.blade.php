@@ -54,4 +54,6 @@
             </div>
         </div>
     </div>
+
+    <x-back-button class="top-10 right-10"/>
 @endsection

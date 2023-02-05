@@ -37,4 +37,6 @@
             @endforeach
         </div>
     </div>
+
+    <x-back-button class="top-4 right-4"/>
 @endsection

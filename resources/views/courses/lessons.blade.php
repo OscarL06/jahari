@@ -95,7 +95,7 @@
         </div>
     </div>
 
-    <x-back-button/>
+    <x-back-button class="top-4 right-4"/>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
