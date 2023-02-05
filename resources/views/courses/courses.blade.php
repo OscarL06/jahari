@@ -56,5 +56,5 @@
         @livewire('reset-course', ['course_id' => $course->id ])
     </div>
 
-    <x-back-button class="top-10 right-10"/>
+    <x-back-button class="top-4 right-4 lg:top-10 lg:right-10"/>
 @endsection
