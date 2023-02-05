@@ -4,6 +4,11 @@
 
 @section('content')
     <div class="w-full lg:w-4/5 flex flex-col items-center lg:ml-[20%] mt-16 lg:mt-6">
+
+        <div class="mb-4 w-[95%] bg-gray-200 rounded-full h-2.5 overflow-hidden">
+            <div class="bg-main h-2.5 rounded-full animate__animated animate__lightSpeedInLeft animate__slower" style="width: {{ $completed }}%"></div>
+        </div>
+
         <h1 class="text-5xl tracking-tighter font-abel">{{ $lesson->course->name }} | {{ $lesson->name }}</h1>
 
         @if(session()->has('status'))
@@ -90,7 +95,7 @@
         </div>
     </div>
 
-    <x-back-button class="top-4 right-4"/>
+    <x-back-button class="top-10 right-10"/>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {

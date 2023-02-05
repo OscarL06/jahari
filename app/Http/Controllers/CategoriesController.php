@@ -26,8 +26,11 @@ class CategoriesController extends Controller
     public function lessons($id) {
         
         $lesson = Material::with('video', 'slices')->where('id', $id)->first();
+
+        $completed = $lesson->course->completedMaterialCount() / $lesson->course->materialCount() * 100;
+
         $nextLesson = $lesson->nextLesson();
 
-        return view('courses.lessons', compact('lesson', 'id', 'nextLesson'));
+        return view('courses.lessons', compact('lesson', 'id', 'nextLesson', 'completed'));
     }
 }
