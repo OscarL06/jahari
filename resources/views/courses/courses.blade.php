@@ -53,6 +53,7 @@
                 </div>
             </div>
         </div>
+        @livewire('reset-course', ['course_id' => $course->id ])
     </div>
 
     <x-back-button class="top-10 right-10"/>

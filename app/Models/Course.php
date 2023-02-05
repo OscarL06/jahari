@@ -48,4 +48,9 @@ class Course extends Model
             })->count();
     }
 
+    public function deleteProgress() {
+        Progress::where('user_id', auth()->id())
+            ->whereIn('material_id', $this->materials->pluck('id'))
+            ->delete();
+    }
 }
