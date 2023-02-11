@@ -1,5 +1,5 @@
 <div x-show.transition.duration.500ms="practice"class="fixed inset-0 flex items-center justify-center px-4 bg-black bg-opacity-75 md:px-0">
-    <div class="flex flex-col max-w-lg p-6 bg-white rounded-lg shadow-2xl" @click.away="practice = false">
+    <div class="flex flex-col max-w-lg p-6 bg-white rounded-lg shadow-2xl lg:w-2/3" @click.away="practice = false">
         <div class="flex justify-between mb-4">
             <h3 class="text-3xl font-abel">Practice</h3>
             <button @click="practice = false">
@@ -9,7 +9,7 @@
             </button>
         </div>
         <div class="py-2 rounded-md shadow lg:p-4 watch font-abel bg-main">
-            <div class="px-2 text-white rounded-lg text-7xl time lg:text-8xl bg-main">00:00:00</div>
+            <div class="w-full px-2 text-center text-white rounded-lg text-7xl time lg:text-8xl bg-main">00:00:00</div>
             <div class="flex justify-around mt-6 text-black">
                 <button id="start" class="px-2 py-1 bg-white rounded-md lg:px-8">Start</button>
 			    <button id="stop" class="px-2 py-1 bg-white rounded-md lg:px-8">Stop</button>

@@ -171,6 +171,8 @@
     @yield('content')
 
     @livewire('practice-modal')
+
+    <script src="/js/practice.js"></script>
     
     @livewireScripts
 </body>
