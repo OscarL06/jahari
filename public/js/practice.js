@@ -3,6 +3,7 @@ const time_el = document.querySelector('.watch .time');
 const start_btn = document.getElementById('start');
 const stop_btn = document.getElementById("stop");
 const reset_btn = document.getElementById("reset");
+const save_btn = document.getElementById('save');
 
 let seconds = 0;
 let interval = null;
@@ -10,6 +11,7 @@ let interval = null;
 // Event listeners
 start_btn.addEventListener('click', start);
 stop_btn.addEventListener("click", stop);
+save_btn.addEventListener("click", stop);
 reset_btn.addEventListener("click", reset);
 
 // Update the timer
@@ -39,6 +41,8 @@ function start () {
 function stop () {
 	clearInterval(interval);
 	interval = null;
+
+	window.livewire.emit('updateDuration', time_el.innerText);
 }
 
 function reset () {
