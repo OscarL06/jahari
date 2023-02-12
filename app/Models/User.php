@@ -46,7 +46,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-        public function points() {
-            return $this->hasOne(Point::class);
+    public function points() {
+        return $this->hasOne(Point::class);
+    }
+
+    public function practice() {
+        return $this->hasMany(Practice::class)->orderBy('created_at');
     }
 }

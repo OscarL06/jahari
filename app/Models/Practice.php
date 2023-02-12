@@ -9,9 +9,13 @@ class Practice extends Model
 {
     use HasFactory;
 
-     protected $fillable = [
+    protected $fillable = [
         'user_id',
         'material_id',
         'duration',
     ];
+
+        public function user(){
+        return $this->belongsTo(User::class);
+    }
 }
