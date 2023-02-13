@@ -1,5 +1,5 @@
 <div x-show="practice" x-transition:enter.duration.800ms x-transition:leave.duration.800ms class="fixed inset-0 z-30 flex items-center justify-center px-4 bg-black bg-opacity-75 md:px-0">
-    <div class="flex flex-col w-10/12 p-6 bg-white rounded-lg shadow-2xl lg:w-1/3" @click.away="practice = false">
+    <div class="flex flex-col w-[95%] p-6 bg-white rounded-lg shadow-2xl lg:w-1/3" @click.away="practice = false">
         <div class="flex justify-between mb-4">
             <h3 class="text-3xl font-abel">Practice <span class="text-sm">{{ date("m/d/Y") }}</span></h3>
             <button @click="practice = false">
