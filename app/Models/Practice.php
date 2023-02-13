@@ -9,9 +9,10 @@ class Practice extends Model
 {
     use HasFactory;
 
+    protected $table = 'practice';
+
     protected $fillable = [
         'user_id',
-        'material_id',
         'duration',
     ];
 

@@ -1,7 +1,7 @@
 <div x-show="practice" x-transition:enter.duration.800ms x-transition:leave.duration.800ms class="fixed inset-0 flex items-center justify-center px-4 bg-black bg-opacity-75 md:px-0">
     <div class="flex flex-col max-w-lg p-6 bg-white rounded-lg shadow-2xl lg:w-2/3" @click.away="practice = false">
         <div class="flex justify-between mb-4">
-            <h3 class="text-3xl font-abel">Practice {{ date("m/d/Y g:iA") }}</h3>
+            <h3 class="text-3xl font-abel">Practice <span class="text-sm">{{ date("m/d/Y") }}</span></h3>
             <button @click="practice = false">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-purple-700">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -16,10 +16,7 @@
 			    <button id="reset" class="px-2 py-1 bg-white rounded-md lg:px-8">Reset</button>
             </div>
         </div>
-{{--         <input id="hours" wire:model="hours" type="hidden">
-        <input id="minutes" wire:model="minutes" type="hidden">
-        <input id="sec" wire:model="sec" type="text"> --}}
-        <input type="text" placeholder="Practice Session Name" class="mt-4 border border-purple-700 rounded-md font-abel focus:ring-1 focus:ring-purple-700">
+        <input wire:model="name" type="text" placeholder="Practice Session Name" class="mt-4 border border-purple-700 rounded-md font-abel focus:ring-1 focus:ring-purple-700">
         <button id="save" class="w-full py-2 mt-8 text-white rounded-md shadow bg-main hover:opacity-90" wire:click="savePracticeSession">Save</button>
     </div>
 </div>
