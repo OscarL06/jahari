@@ -8,6 +8,13 @@ use App\Models\Practice;
 
 class PracticeController extends Controller
 {
+    public function show(){
+        
+        $logs = Practice::with('user')->where('user_id', Auth::id())->get();
+
+        return view('practice-logs', compact('logs'));
+    }
+
     public function destroy($id){
     
         $practice = Practice::where('id', $id)->where('user_id', Auth::id())->first();

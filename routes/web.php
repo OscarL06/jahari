@@ -18,6 +18,7 @@ Route::get('/dash', function () { return view('dash');})->name('dash');
 Route::get('/courses', [CategoriesController::class, 'categories'])->name('categories');
 Route::get('/subscribe', [SubscribeController::class, 'subscribe'])->name('subscribe');
 Route::get('/notes', [NotesController::class, 'show'])->name('notes');
+Route::get('/practice-logs', [PracticeController::class, 'show'])->name('practice');
 Route::delete('/practice/delete/{id}', [PracticeController::class, 'destroy'])->name('delete-practice');
 
 
