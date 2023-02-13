@@ -203,6 +203,12 @@
             </div>
         </div>
 
+        @if (session()->has('practice-deleted'))
+            <div class="px-5 text-purple-900 rounded-md font-abel bg-purple-50">
+                {{ session()->get('practice-deleted') }}
+            </div>
+        @endif
+
         <!-- Practice -->
         <div class="w-11/12 mb-12">
             <div class="px-4 sm:px-6 lg:px-8">
@@ -243,7 +249,8 @@
                                     <td class="hidden px-3 py-4 text-sm text-gray-500 lg:table-cell">{{ $pr->duration }}</td>
                                     <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">{{ $pr->name }}</td>
                                     <td class="py-4 pl-3 pr-4 text-sm font-medium text-right sm:pr-6">
-                                        <a href="#" class="p-2 font-mono text-purple-900 rounded-md bg-purple-50 hover:bg-purple-100 ">Remove</a>
+                                        <a href="/practice/delete/{{ $pr->id }}" class="p-2 font-mono text-purple-900 rounded-md bg-purple-50 hover:bg-purple-100" onclick="event.preventDefault(); document.getElementById('delete-practice').submit();">Remove</a>
+                                        <form id="delete-practice" action="{{ route('delete-practice', ['id' => $pr->id]) }}" method="POST" style="display: none;"> @csrf @method('delete')</form>  
                                     </td>
                                 </tr>
                             @empty
@@ -259,6 +266,5 @@
                 <a href="" class="ml-4 text-purple-700 font-abel">View all</a>
             </div>
         </div>
-
     </div>
 @endsection

@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\{ProfileController, CategoriesController, SubscribeController, NotesController};
+use App\Http\Controllers\{ProfileController, CategoriesController, SubscribeController, NotesController, PracticeController};
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -18,6 +18,8 @@ Route::get('/dash', function () { return view('dash');})->name('dash');
 Route::get('/courses', [CategoriesController::class, 'categories'])->name('categories');
 Route::get('/subscribe', [SubscribeController::class, 'subscribe'])->name('subscribe');
 Route::get('/notes', [NotesController::class, 'show'])->name('notes');
+Route::delete('/practice/delete/{id}', [PracticeController::class, 'destroy'])->name('delete-practice');
+
 
 Route::middleware('subscribed')->group(function () {
     Route::get('/courses/{id}', [CategoriesController::class, 'courses'])->name('course');
