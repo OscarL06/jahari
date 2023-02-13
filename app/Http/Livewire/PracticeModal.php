@@ -30,5 +30,7 @@ class PracticeModal extends Component
             'duration' => $this->duration,
             'name' => $this->name,
         ]);
+
+        return redirect()->back()->with('success', 'Practice session saved successfully');
     }
 }

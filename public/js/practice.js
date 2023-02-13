@@ -16,6 +16,7 @@ save_btn.addEventListener("click", function () {
   stop();
   window.livewire.emit('updateDuration', time_el.innerText);
   window.livewire.emit('savePracticeSession');
+  /* location.reload(); */
 });
 
 // Update the timer

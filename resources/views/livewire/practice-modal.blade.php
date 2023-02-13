@@ -19,5 +19,11 @@
         <p class="mt-4 font-abel">optional</p>
         <input wire:model="name" type="text" placeholder="Practice Session Name" class="border border-purple-700 rounded-md font-abel focus:ring-1 focus:ring-purple-700">
         <button id="save" class="w-full py-2 mt-8 text-white rounded-md shadow bg-main hover:opacity-90">Save</button>
+        
+        @if(session()->has('success'))
+            <div class="px-5 py-1 mt-2 text-xl text-center text-purple-900 rounded-md font-abel bg-purple-50 fade-out">
+                {{ session()->get('success') }}
+            </div>
+        @endif
     </div>
 </div>

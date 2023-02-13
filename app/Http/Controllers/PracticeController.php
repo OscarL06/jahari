@@ -10,7 +10,7 @@ class PracticeController extends Controller
 {
     public function show(){
         
-        $logs = Practice::with('user')->where('user_id', Auth::id())->get();
+        $logs = Practice::with('user')->where('user_id', Auth::id())->orderBy('created_at', 'DESC')->get();
 
         return view('practice-logs', compact('logs'));
     }

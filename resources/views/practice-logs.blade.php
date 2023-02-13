@@ -1,13 +1,13 @@
 @extends('layouts.main')
 
-@section('title', 'Notes | ' . Auth::user()->username)
+@section('title', 'Practice Logs | ' . Auth::user()->username)
 
 @section('content')
     <div class="w-full lg:w-4/5 flex flex-col items-center lg:ml-[20%] mt-6">
         <h1 class="text-6xl tracking-tighter font-abel">Practice Logs</h1>
 
-        @if (session()->has('practice-deleted'))
-            <div class="px-5 text-xl text-purple-900 rounded-md font-abel bg-purple-50 fade-out">
+        @if(session()->has('practice-deleted'))
+            <div class="px-5 mt-10 text-xl text-purple-900 rounded-md font-abel bg-purple-50 fade-out">
                 {{ session()->get('practice-deleted') }}
             </div>
         @endif
@@ -38,7 +38,6 @@
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
                             @forelse ($logs as $log )
-                                @if ($loop->iteration > 5) @break @endif
                                 <tr>
                                     <td class="w-full py-4 pl-4 pr-3 text-sm font-medium text-gray-900 max-w-0 sm:w-auto sm:max-w-none sm:pl-6">
                                         {{ date("m/d/Y", strtotime($log->created_at)) }}
@@ -66,7 +65,6 @@
                         </tbody>
                     </table>
                 </div>
-                <a href="" class="ml-4 text-purple-700 font-abel">View all</a>
             </div>
         </div>
     </div>
