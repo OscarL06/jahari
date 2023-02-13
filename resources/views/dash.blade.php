@@ -45,6 +45,12 @@
             </div>
         </div>
 
+        @if (session()->has('practice-deleted'))
+            <div class="px-5 mt-6 text-xl text-purple-900 rounded-md font-abel bg-purple-50 fade-out">
+                {{ session()->get('practice-deleted') }}
+            </div>
+        @endif
+
         <!-- Menu -->
         <div class="w-10/12 my-16">
             <div class="overflow-hidden bg-gray-200 divide-y divide-gray-200 rounded-lg shadow sm:grid sm:grid-cols-2 sm:gap-px sm:divide-y-0">
@@ -204,7 +210,7 @@
         </div>
 
         @if (session()->has('practice-deleted'))
-            <div class="px-5 text-purple-900 rounded-md font-abel bg-purple-50">
+            <div class="px-5 text-xl text-purple-900 rounded-md font-abel bg-purple-50 fade-out">
                 {{ session()->get('practice-deleted') }}
             </div>
         @endif

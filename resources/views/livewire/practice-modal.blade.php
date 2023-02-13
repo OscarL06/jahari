@@ -18,6 +18,6 @@
         </div>
         <p class="mt-4 font-abel">optional</p>
         <input wire:model="name" type="text" placeholder="Practice Session Name" class="border border-purple-700 rounded-md font-abel focus:ring-1 focus:ring-purple-700">
-        <button id="save" class="w-full py-2 mt-8 text-white rounded-md shadow bg-main hover:opacity-90" wire:click="savePracticeSession">Save</button>
+        <button id="save" class="w-full py-2 mt-8 text-white rounded-md shadow bg-main hover:opacity-90">Save</button>
     </div>
 </div>

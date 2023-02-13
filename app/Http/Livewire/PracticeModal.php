@@ -11,7 +11,7 @@ class PracticeModal extends Component
     public $name;
     public $duration = "00:00:00";
 
-    protected $listeners = ['updateDuration'];
+    protected $listeners = ['updateDuration', 'savePracticeSession'];
 
     public function render()
     {

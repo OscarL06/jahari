@@ -11,8 +11,12 @@ let interval = null;
 // Event listeners
 start_btn.addEventListener('click', start);
 stop_btn.addEventListener("click", stop);
-save_btn.addEventListener("click", stop);
 reset_btn.addEventListener("click", reset);
+save_btn.addEventListener("click", function () {
+  stop();
+  window.livewire.emit('updateDuration', time_el.innerText);
+  window.livewire.emit('savePracticeSession');
+});
 
 // Update the timer
 function timer () {
@@ -39,10 +43,10 @@ function start () {
 }
 
 function stop () {
-	clearInterval(interval);
-	interval = null;
 
 	window.livewire.emit('updateDuration', time_el.innerText);
+	clearInterval(interval);
+	interval = null;
 }
 
 function reset () {
