@@ -209,13 +209,13 @@
                 <div class="sm:flex sm:items-center">
                     <div class="sm:flex-auto">
                         <h1 class="text-xl font-semibold text-gray-900 font-abel">Practice Logs</h1>
-                        <p class="mt-2 text-sm text-gray-700">A list of all your practice sessions</p>
+                        <p class="mt-2 text-sm text-gray-700">A list of your last 5 practice sessions</p>
                     </div>
                     <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
                         <button type="button" class="inline-flex items-center justify-center px-4 py-2 font-medium text-white border border-transparent rounded-md shadow-sm bg-main sm:w-auto font-abel" @click="practice = true">Practice</button>
                     </div>
                 </div>
-                <div class="mt-8 -mx-4 overflow-hidden rounded-lg shadow ring-1 ring-black ring-opacity-5 sm:-mx-6 md:mx-0">
+                <div class="mt-8 mb-4 -mx-4 overflow-hidden rounded-lg shadow ring-1 ring-black ring-opacity-5 sm:-mx-6 md:mx-0">
                     <table class="min-w-full divide-y divide-gray-300 font-abel">
                         <thead class="bg-gray-50">
                             <tr>
@@ -256,6 +256,7 @@
                         </tbody>
                     </table>
                 </div>
+                <a href="" class="ml-4 text-purple-700 font-abel">View all</a>
             </div>
         </div>
 
