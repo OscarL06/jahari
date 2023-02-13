@@ -14,6 +14,7 @@ class Practice extends Model
     protected $fillable = [
         'user_id',
         'duration',
+        'name',
     ];
 
         public function user(){

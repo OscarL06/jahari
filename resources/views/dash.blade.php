@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <div class="flex-1 hidden min-w-0 mt-6 sm:block md:hidden">
-                    <h1 class="text-2xl font-bold text-gray-900 truncate">Ricardo Cooper</h1>
+                    <h1 class="text-2xl font-bold text-gray-900 truncate">{{ Auth::user()->name }}</h1>
                 </div>
             </div>
         </div>
@@ -220,30 +220,39 @@
                         <thead class="bg-gray-50">
                             <tr>
                             <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Date</th>
-                            <th scope="col" class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 lg:table-cell">Time</th>
-                            <th scope="col" class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sm:table-cell">Description</th>
+                            <th scope="col" class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 lg:table-cell">Duration</th>
+                            <th scope="col" class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sm:table-cell">Name</th>
                             <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6">
                                 <span class="sr-only">Remove</span>
                             </th>
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
-                            <tr>
-                                <td class="w-full py-4 pl-4 pr-3 text-sm font-medium text-gray-900 max-w-0 sm:w-auto sm:max-w-none sm:pl-6">
-                                    12/25/2022
-                                    <dl class="font-normal lg:hidden">
-                                    <dt class="sr-only">Time</dt>
-                                    <dd class="mt-1 text-gray-700 truncate">00:10</dd>
-                                    <dt class="sr-only sm:hidden">Description</dt>
-                                    <dd class="mt-1 text-gray-500 truncate sm:hidden">first practice</dd>
-                                    </dl>
-                                </td>
-                                <td class="hidden px-3 py-4 text-sm text-gray-500 lg:table-cell">00:10</td>
-                                <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">first practice</td>
-                                <td class="py-4 pl-3 pr-4 text-sm font-medium text-right sm:pr-6">
-                                    <a href="#" class="p-2 font-mono text-purple-900 rounded-md bg-purple-50 hover:bg-purple-100 ">Remove</a>
-                                </td>
-                            </tr>
+                            @forelse (Auth::user()->practice as $pr )
+                                @if ($loop->iteration > 5) @break @endif
+                                <tr>
+                                    <td class="w-full py-4 pl-4 pr-3 text-sm font-medium text-gray-900 max-w-0 sm:w-auto sm:max-w-none sm:pl-6">
+                                        {{ date("m/d/Y", strtotime($pr->created_at)) }}
+                                        <dl class="font-normal lg:hidden">
+                                        <dt class="sr-only">Time</dt>
+                                        <dd class="mt-1 text-gray-700 truncate">{{ $pr->duration }}</dd>
+                                        <dt class="sr-only sm:hidden">Description</dt>
+                                        <dd class="mt-1 text-gray-500 truncate sm:hidden">{{ $pr->name }}</dd>
+                                        </dl>
+                                    </td>
+                                    <td class="hidden px-3 py-4 text-sm text-gray-500 lg:table-cell">{{ $pr->duration }}</td>
+                                    <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">{{ $pr->name }}</td>
+                                    <td class="py-4 pl-3 pr-4 text-sm font-medium text-right sm:pr-6">
+                                        <a href="#" class="p-2 font-mono text-purple-900 rounded-md bg-purple-50 hover:bg-purple-100 ">Remove</a>
+                                    </td>
+                                </tr>
+                            @empty
+                                 <tr>
+                                    <td class="py-4 pl-4 pr-3 text-sm font-medium text-center text-gray-900" colspan="4">
+                                        You have not recorded any practice sessions.
+                                    </td>
+                                </tr>
+                            @endforelse
                         </tbody>
                     </table>
                 </div>

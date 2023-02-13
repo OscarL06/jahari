@@ -27,7 +27,8 @@ class PracticeModal extends Component
         
         Practice::create([
             'user_id' => Auth::user()->id,
-            'duration' => $this->duration
+            'duration' => $this->duration,
+            'name' => $this->name,
         ]);
     }
 }
