@@ -10,7 +10,7 @@
     @paddleJS
     @livewireStyles
 </head>
-<body class="flex justify-between h-full selection:bg-purple-600 selection:text-white" x-data="{sidebar:false, practice:true}">
+<body class="flex justify-between h-full selection:bg-purple-600 selection:text-white" x-data="{sidebar:false, practice:false}">
 
     <div class="relative z-30 lg:hidden">
         <button class="fixed flex items-center justify-center w-12 h-12 mt-1 ml-1 border-2 rounded-md cursor-pointer bg-main" @click="sidebar= true">
