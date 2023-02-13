@@ -9,7 +9,7 @@
             <div class="bg-main h-2.5 rounded-full animate__animated animate__lightSpeedInLeft animate__slower" style="width: {{ $completed }}%"></div>
         </div>
 
-        <h1 class="text-5xl tracking-tighter font-abel">{{ $lesson->course->name }} | {{ $lesson->name }}</h1>
+        <h1 class="text-3xl tracking-tighter md:text-5xl font-abel">{{ $lesson->course->name }} | {{ $lesson->name }}</h1>
 
         @if(session()->has('status'))
             <div x-data="{ showFlash: true }" x-show="showFlash">
@@ -22,20 +22,20 @@
             </div>
         @endif
 
-        <div class="flex flex-col items-center w-11/12 md:flex-row md:justify-center">
-            <div class="flex flex-col items-center w-11/12 mt-16 xl:w-2/3 md:w-1/2">
+        <div class="flex flex-col items-center w-[95%] md:flex-row md:justify-center">
+            <div class="flex flex-col items-center w-[95%] mt-16 xl:w-2/3 md:w-1/2">
                 @livewire('progress-video', ['lesson_id' => $lesson->id ])
 
-                <div class="flex justify-center w-full p-1 mt-2 space-x-5 text-white rounded-md shadow md:space-x-2 xl:space-x-10 lg:w-full bg-main" wire:click="updateProgress">
+                <div class="flex justify-center w-full p-1 px-2 mt-2 space-x-5 text-white rounded-md shadow md:space-x-2 xl:space-x-10 lg:w-full bg-main" wire:click="updateProgress">
                     @livewire('lesson-complete', ['lesson_id' => $lesson->id])
                     <a href="#notes" class="cursor-pointer px-2 py-0.5 text-white bg-main rounded-md font-abel shadow shadow-purple-500 flex items-center" @click="open =  true">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hidden w-4 h-4 mr-1 md:block">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
                         </svg>
                         Notes
                     </a>
                     <button class="px-2 py-0.5 text-white bg-main rounded-md font-abel shadow shadow-purple-500 flex items-center" @click="practice = true">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hidden w-5 h-5 mr-1 md:block">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z" />
                         </svg>
                         Practice
