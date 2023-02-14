@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="w-full lg:w-4/5 flex flex-col items-center lg:ml-[20%] mt-6">
-        <h1 class="text-6xl tracking-tighter font-abel">Practice Logs</h1>
+        <h1 class="mb-24 text-6xl tracking-tighter font-abel">Practice Logs</h1>
 
         @livewire('practice-logs')
     </div>

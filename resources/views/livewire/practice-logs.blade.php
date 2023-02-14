@@ -1,7 +1,7 @@
-<div class="w-11/12 mt-24 mb-12">
+<div class="w-11/12 mb-12">
     <div class="px-4 sm:px-6 lg:px-8">
         @if(session()->has('practice-deleted'))
-            <div class="flex justify-center px-5 mt-10 mb-8 text-xl text-center text-purple-900 rounded-md font-abel">
+            <div class="flex justify-center px-5 mt-10 mb-4 text-xl text-center text-purple-900 rounded-md font-abel">
                 <p class="px-4 rounded-md bg-purple-50 fade-out">{{ session()->get('practice-deleted') }}</p>
             </div>
         @endif
@@ -54,5 +54,8 @@
                 </tbody>
             </table>
         </div>
+        @if (request()->segment(1) == 'dash')
+            <a href="{{ route('practice') }}" class="ml-2 text-purple-900 font-abel">Show all</a>
+        @endif
     </div>
 </div>
